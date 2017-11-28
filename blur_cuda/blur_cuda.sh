@@ -1,9 +1,9 @@
-nvcc `pkg-config --cflags opencv` -arch blur_cuda.cu -lpthread `pkg-config --libs opencv` -o exec_cuda.out
+nvcc `pkg-config --cflags opencv` -arch compute_20 blur_cuda.cu -lpthread `pkg-config --libs opencv` -o exec_cuda.out
 
 
 tam_kernel=40  		#Tamaño del kernel
 n_bloques=11   		#Cantidad de bloques a usar
-n_hilos=11   		#Cantidad de hilos a usar
+n_hilos=11   		  #Cantidad de hilos a usar
 imagen=1080.jpg	 	#Nombre de la imagen
 
 echo "Ejecutando blur_cuda....."
